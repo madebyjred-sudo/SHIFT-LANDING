@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Glitz Font for Titles */
+@font-face {
+  font-family: 'Glitz';
+  src: url('/Glitz-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply m-0 overflow-hidden bg-white dark:bg-[#050505];
+    font-family: 'Fira Sans', sans-serif;
+    cursor: none;
+  }
+
+  /* Glitz - Only for main hero titles (h1, h2) */
+  h1,
+  h2 {
+    font-family: 'Glitz', sans-serif;
+    letter-spacing: 0.02em;
+    /* Fix letter-spacing to prevent overlap */
+  }
+
+  /* Figtree - For subtitles, smaller headings, and highlighted text */
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+  }
+
+  /* Custom scrollbar hide */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .stroke-text {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+    color: transparent;
+  }
+
+  .dark .stroke-text {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .stroke-text-filled {
+    -webkit-text-stroke: 1px #0047AB;
+    color: transparent;
+    transition: all 0.5s ease;
+  }
+
+  .dark .stroke-text-filled {
+    -webkit-text-stroke: 1px #FFFFFF;
+  }
+
+  .stroke-text-filled:hover {
+    -webkit-text-stroke: 1px #FF00FF;
+    text-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+  }
+
+  /* Liquid Glass Utility - Refined for clarity */
+  .liquid-glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .liquid-glass {
+    background: rgba(0, 35, 94, 0.6);
+    /* Matching Shift's Navy Blue Tertiary #00235E */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Holographic gradient animations for IMPARABLES */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Lenis recommended styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
