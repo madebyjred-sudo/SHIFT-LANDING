@@ -64,7 +64,7 @@ export const HeroSlide: React.FC = () => {
         {/* Animated Background Video (WebP) */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img
-            src="/hero-bg.webp"
+            src="hero-bg.webp"
             alt="Background Texture"
             className="w-full h-full object-cover opacity-[0.025] mix-blend-screen dark:mix-blend-screen contrast-125"
           />

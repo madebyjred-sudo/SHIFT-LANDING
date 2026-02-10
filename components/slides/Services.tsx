@@ -341,7 +341,7 @@ export const ServicesSlide: React.FC = () => {
           playsInline
           className="w-full h-full object-cover opacity-60 dark:opacity-80 grayscale-[10%]"
         >
-          <source src="/videos/ecosystem-bg.mp4" type="video/mp4" />
+          <source src="videos/ecosystem-bg.mp4" type="video/mp4" />
         </video>
 
         {/* Floating Orb preserved but adjusted */}
