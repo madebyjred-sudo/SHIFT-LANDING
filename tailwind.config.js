@@ -36,6 +36,7 @@ export default {
         'elevation-1': '0 1px 2px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.15)',
         'elevation-2': '0 1px 2px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.15)',
         'elevation-3': '0 4px 8px rgba(0,0,0,0.3), 0 6px 20px rgba(0,0,0,0.15)',
+        'glass': '0 4px 24px 0 rgba(0, 35, 94, 0.08), 0 1.5px 6px 0 rgba(0, 35, 94, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.5)',
       },
       backgroundImage: {
         'soft-gradient': 'linear-gradient(135deg, #f5f7ff 0%, #edf0fe 100%)',

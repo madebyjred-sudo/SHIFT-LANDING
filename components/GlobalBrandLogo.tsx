@@ -59,11 +59,11 @@ export const GlobalBrandLogo: React.FC<GlobalBrandLogoProps> = ({ currentSlide }
                 <div
                     className="w-full h-full bg-primary dark:bg-white transition-colors duration-500 block"
                     style={{
-                        maskImage: 'url("/logo-FULL.svg")',
+                        maskImage: 'url("logo-FULL.svg")',
                         maskRepeat: 'no-repeat',
                         maskSize: 'contain',
                         maskPosition: isHero ? 'center' : 'left center',
-                        WebkitMaskImage: 'url("/logo-FULL.svg")',
+                        WebkitMaskImage: 'url("logo-FULL.svg")',
                         WebkitMaskRepeat: 'no-repeat',
                         WebkitMaskSize: 'contain',
                         WebkitMaskPosition: isHero ? 'center' : 'left center'

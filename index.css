@@ -23,7 +23,6 @@
   h2 {
     font-family: 'Glitz', sans-serif;
     letter-spacing: 0.02em;
-    /* Fix letter-spacing to prevent overlap */
   }
 
   /* Figtree - For subtitles, smaller headings, and highlighted text */
@@ -66,7 +65,65 @@
     text-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
   }
 
-  /* Liquid Glass Utility - Refined for clarity */
+  /* ============================
+     LIQUID GLASS — Desktop Nav
+     ============================ */
+  .liquid-glass-nav {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 255, 255, 0.56) 50%,
+        rgba(245, 247, 255, 0.64) 100%);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow:
+      0 4px 24px 0 rgba(0, 35, 94, 0.08),
+      0 1.5px 6px 0 rgba(0, 35, 94, 0.04),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .dark .liquid-glass-nav {
+    background: linear-gradient(135deg,
+        rgba(0, 35, 94, 0.55) 0%,
+        rgba(5, 20, 60, 0.50) 50%,
+        rgba(0, 25, 70, 0.55) 100%);
+    border: 1px solid rgba(100, 150, 255, 0.12);
+    box-shadow:
+      0 4px 24px 0 rgba(0, 0, 0, 0.35),
+      0 1.5px 6px 0 rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 0 rgba(100, 160, 255, 0.08);
+  }
+
+  /* ============================
+     LIQUID GLASS — Mobile Island
+     ============================ */
+  .liquid-glass-island {
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.88) 0%,
+        rgba(248, 250, 255, 0.82) 100%);
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+      0 8px 40px 0 rgba(0, 0, 0, 0.10),
+      0 2px 8px 0 rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .dark .liquid-glass-island {
+    background: linear-gradient(180deg,
+        rgba(20, 26, 44, 0.88) 0%,
+        rgba(10, 16, 34, 0.85) 100%);
+    border: 1px solid rgba(100, 150, 255, 0.10);
+    box-shadow:
+      0 8px 40px 0 rgba(0, 0, 0, 0.4),
+      0 2px 8px 0 rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 0 rgba(100, 160, 255, 0.06);
+  }
+
+  /* ============================
+     LIQUID GLASS — Generic (Manifesto cards, etc.)
+     ============================ */
   .liquid-glass {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(20px) saturate(180%);
@@ -77,7 +134,6 @@
 
   .dark .liquid-glass {
     background: rgba(0, 35, 94, 0.6);
-    /* Matching Shift's Navy Blue Tertiary #00235E */
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   }
