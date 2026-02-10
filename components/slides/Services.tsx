@@ -430,6 +430,11 @@ export const ServicesSlide: React.FC = () => {
           <div className="min-w-[4vw]"></div>
         </div>
 
+        {/* Swipe Hint */}
+        <div className="absolute bottom-36 w-full text-center text-xs font-display uppercase tracking-widest opacity-50 pointer-events-none text-tertiary dark:text-white">
+          ← Desliza para explorar →
+        </div>
+
       </div>
     </section>
   );

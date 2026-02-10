@@ -164,11 +164,11 @@ export const CaseStudyView: React.FC<CaseStudyProps> = ({ project, onClose }) =>
                         </header>
 
                         {/* Sticky Body Section */}
-                        <section className="px-6 md:px-12 py-16 md:py-24 bg-surface dark:bg-[#080808] relative z-10 rounded-t-3xl -mt-8 shadow-2xl">
-                            <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+                        <section className="px-5 md:px-12 py-10 md:py-24 bg-surface dark:bg-[#080808] relative z-10 rounded-t-3xl -mt-8 shadow-2xl">
+                            <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24">
 
                                 {/* Sticky Sidebar (Desktop) / Static Info (Mobile) */}
-                                <div className="lg:col-span-4 h-fit lg:sticky lg:top-12 flex flex-col gap-12 order-2 lg:order-1">
+                                <div className="lg:col-span-4 h-fit lg:sticky lg:top-12 flex flex-col gap-8 lg:gap-12 order-1">
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +201,7 @@ export const CaseStudyView: React.FC<CaseStudyProps> = ({ project, onClose }) =>
                                 </div>
 
                                 {/* Right Content Stream */}
-                                <div className="lg:col-span-8 flex flex-col gap-24 md:gap-40">
+                                <div className="lg:col-span-8 flex flex-col gap-16 md:gap-40 order-2">
                                     {/* Process / Shift */}
                                     <div>
                                         <h3 className="text-3xl md:text-5xl font-display font-bold mb-8">{project.story.shift}</h3>

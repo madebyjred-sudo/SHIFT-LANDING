@@ -162,7 +162,7 @@ export const ManifestoSlide: React.FC = () => {
             {/* AWARDS GRAPHIC PLACEMENT */}
             <div className="mb-6 md:mb-8 p-3 md:p-4 rounded-xl border border-tertiary/10 dark:border-white/10">
               <img
-                src="/AWRDS%20SHIFT.svg"
+                src="AWRDS%20SHIFT.svg"
                 alt="Reconocidos con los más importantes galardones a nivel global"
                 className={`w-full h-auto opacity-90 ${theme === 'dark' ? 'invert' : ''}`}
               />
