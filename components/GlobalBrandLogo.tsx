@@ -36,8 +36,8 @@ export const GlobalBrandLogo: React.FC<GlobalBrandLogoProps> = ({ currentSlide }
             : { top: '50%', left: '25%', x: '-50%', y: '-50%', width: '21vw', maxWidth: 'none', height: 'auto', opacity: 1 }  // Desktop Hero
         )
         : (isMobile
-            ? { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: '115px', height: 'auto', opacity: 0 } // Mobile Scrolled: HIDDEN (replaced by Section Titles)
-            : { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: 'auto', height: '1.75rem', opacity: 1 } // Desktop Scrolled (Top Left)
+            ? { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: '140px', height: 'auto', opacity: 0 } // Mobile Scrolled: HIDDEN (replaced by Section Titles)
+            : { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: 'auto', height: '2.5rem', opacity: 1 } // Desktop Scrolled (Top Left)
         );
 
     return (
