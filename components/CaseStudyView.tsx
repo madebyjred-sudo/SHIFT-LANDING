@@ -59,7 +59,7 @@ export const CaseStudyView: React.FC<CaseStudyProps> = ({ project, onClose }) =>
     return (
         <>
             <AnimatePresence>
-                {isFullScreen && project.videoUrl && (
+                {isFullScreen && (project.fullVideoUrl || project.videoUrl) && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -72,16 +72,26 @@ export const CaseStudyView: React.FC<CaseStudyProps> = ({ project, onClose }) =>
                         >
                             <X size={24} />
                         </button>
-                        <video
-                            key={project.videoUrl}
-                            className="w-full h-full object-contain"
-                            controls
-                            autoPlay
-                            preload="auto"
-                            playsInline
-                        >
-                            <source src={project.videoUrl} type="video/mp4" />
-                        </video>
+                        {project.fullVideoUrl?.includes('youtube.com/embed') ? (
+                            <iframe
+                                src={`${project.fullVideoUrl}?autoplay=1`}
+                                className="w-full h-full max-w-5xl aspect-video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                title={project.title}
+                            />
+                        ) : (
+                            <video
+                                key={project.fullVideoUrl || project.videoUrl}
+                                className="w-full h-full object-contain"
+                                controls
+                                autoPlay
+                                preload="auto"
+                                playsInline
+                            >
+                                <source src={project.fullVideoUrl || project.videoUrl} type="video/mp4" />
+                            </video>
+                        )}
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -139,7 +149,7 @@ export const CaseStudyView: React.FC<CaseStudyProps> = ({ project, onClose }) =>
                             {/* Dark overlay for title readability — always present */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 pointer-events-none" />
 
-                            {project.videoUrl && (
+                            {(project.fullVideoUrl || project.videoUrl) && (
                                 <button
                                     onClick={() => setIsFullScreen(true)}
                                     className="absolute bottom-8 right-8 md:bottom-32 md:right-24 z-20 p-4 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/30 transition-colors text-white border border-white/20 group"

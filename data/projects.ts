@@ -15,6 +15,7 @@ export interface Project {
     services: string[];
     img: string;
     videoUrl?: string;
+    fullVideoUrl?: string;
     gallery: string[];
     story: {
         challenge: string;
@@ -32,6 +33,7 @@ export const projects: Project[] = [
         client: "Nosotras Women Connecting",
         img: "/webps/welcome-to-the-group.webp",
         videoUrl: 'https://shiftvideos.b-cdn.net/Welcome%20to%20the%20group%20-%20SHIFT_PHD.mp4',
+        fullVideoUrl: 'https://www.youtube.com/embed/nDPLQdqdYLE',
         gallery: [
             "/webps/welcome-to-the-group.webp",
             "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop",
@@ -58,6 +60,7 @@ export const projects: Project[] = [
         client: "NGO Impacto Social",
         img: "/webps/justice-by-her-type.webp",
         videoUrl: 'https://shiftvideos.b-cdn.net/GFSF%20-%20Justice%20by%20her%20type.mp4',
+        fullVideoUrl: 'https://www.youtube.com/embed/W_-UgnjJBRc',
         gallery: [
             "/webps/justice-by-her-type.webp",
             "https://images.unsplash.com/photo-1555443681-304724838662?q=80&w=1000&auto=format&fit=crop",
@@ -84,6 +87,7 @@ export const projects: Project[] = [
         client: "Microsoft",
         img: "/webps/bit-centenario.webp",
         videoUrl: 'https://shiftvideos.b-cdn.net/Caso_BITCentenario_Microsoft.mp4',
+        fullVideoUrl: 'https://www.youtube.com/embed/qJWU7dfDRog',
         gallery: [
             "/webps/bit-centenario.webp",
             "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop",
@@ -110,6 +114,7 @@ export const projects: Project[] = [
         client: "Instituto Costarricense de Turismo",
         img: "/webps/heroes-turisticos.webp",
         videoUrl: 'https://shiftvideos.b-cdn.net/Reel_He%CC%81roesTuri%CC%81sticos_ICT.m4v',
+        fullVideoUrl: 'https://www.youtube.com/embed/koi8bZP_-0E',
         gallery: [
             "/webps/heroes-turisticos.webp",
             "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000&auto=format&fit=crop",
