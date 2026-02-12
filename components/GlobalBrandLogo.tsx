@@ -29,15 +29,15 @@ export const GlobalBrandLogo: React.FC<GlobalBrandLogoProps> = ({ currentSlide }
 
     const isHero = currentSlide === 0;
 
-    // Define target properties based on state
+    // Define target properties based on state (Increased by ~15%)
     const targetProps = isHero
         ? (isMobile
-            ? { top: '12%', left: '50%', x: '-50%', y: '-50%', width: '35vw', maxWidth: '160px', height: 'auto', opacity: 1 } // Mobile Hero
-            : { top: '50%', left: '25%', x: '-50%', y: '-50%', width: '18vw', maxWidth: 'none', height: 'auto', opacity: 1 }  // Desktop Hero
+            ? { top: '12%', left: '50%', x: '-50%', y: '-50%', width: '40vw', maxWidth: '185px', height: 'auto', opacity: 1 } // Mobile Hero
+            : { top: '50%', left: '25%', x: '-50%', y: '-50%', width: '21vw', maxWidth: 'none', height: 'auto', opacity: 1 }  // Desktop Hero
         )
         : (isMobile
-            ? { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: '100px', height: 'auto', opacity: 0 } // Mobile Scrolled: HIDDEN (replaced by Section Titles)
-            : { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: 'auto', height: '1.5rem', opacity: 1 } // Desktop Scrolled (Top Left)
+            ? { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: '115px', height: 'auto', opacity: 0 } // Mobile Scrolled: HIDDEN (replaced by Section Titles)
+            : { top: '1.5rem', left: '1.5rem', x: '0%', y: '0%', width: 'auto', height: '1.75rem', opacity: 1 } // Desktop Scrolled (Top Left)
         );
 
     return (
