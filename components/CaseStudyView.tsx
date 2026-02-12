@@ -108,10 +108,10 @@ export const CaseStudyView: React.FC<CaseStudyProps> = ({ project, onClose }) =>
                     <div className="relative"> {/* Content Wrapper for Lenis */}
 
                         {/* Mobile/Desktop Sticky Header & Close Button */}
-                        <div className="fixed top-0 left-0 w-full z-[120] pointer-events-none p-6 md:p-8 flex justify-end mix-blend-difference text-white">
+                        <div className="fixed top-0 left-0 w-full z-[150] pointer-events-none p-6 md:p-8 flex justify-end text-white">
                             <button
                                 onClick={onClose}
-                                className="pointer-events-auto p-3 md:p-4 bg-white/20 backdrop-blur-xl rounded-full hover:scale-110 transition-transform border border-white/20 shadow-lg text-white"
+                                className="pointer-events-auto p-3 md:p-4 bg-black/50 md:bg-white/20 backdrop-blur-xl rounded-full hover:scale-110 transition-transform border border-white/20 shadow-lg text-white"
                                 aria-label="Cerrar proyecto"
                             >
                                 <X size={24} />
