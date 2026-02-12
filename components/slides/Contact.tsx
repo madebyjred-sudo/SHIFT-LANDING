@@ -122,6 +122,19 @@ const offices: Office[] = [
         coords: "4.711° N / 74.072° W",
         gradientColor: "rgba(251, 191, 36, 0.15)",
         mapQuery: "Carrera 15 #88-21, Bogotá, Colombia"
+    },
+    {
+        id: "chl",
+        country: "Chile",
+        city: "Santiago",
+        suffix: "CL",
+        role: "Oficina",
+        address: "Don Carlos 3255 Of B. Las Condes, Región Metropolitana",
+        phone: "-",
+        email: "fernando@publicoporternovelli.cl",
+        coords: "33.414° S / 70.598° W",
+        gradientColor: "rgba(30, 64, 175, 0.15)",
+        mapQuery: "Don Carlos 3255, Las Condes, Chile"
     }
 ];
 
@@ -146,7 +159,7 @@ export const ContactSlide: React.FC = () => {
                 </div>
                 <div className="text-right">
                     <div className="text-xs font-mono text-tertiary/60 dark:text-white/60 mb-1">NETWORK REACH</div>
-                    <div className="text-xl font-display font-bold text-tertiary dark:text-white">8 LATAM Hubs</div>
+                    <div className="text-xl font-display font-bold text-tertiary dark:text-white">9 LATAM Hubs</div>
                 </div>
             </div>
 
