@@ -9,6 +9,25 @@ export const translations = {
             services: 'Servicios',
             contact: 'Contacto',
         },
+        hero: {
+            prefix: 'Somos',
+            highlight: 'Imparables',
+            description: {
+                line1: 'Comunicación',
+                line1Bold: 'estratégica',
+                line1Suffix: ', inteligencia de datos y tecnología',
+                line1Bold2: 'creativa',
+                line1End: '.',
+                line2: 'Transformamos',
+                line2Bold1: 'marcas',
+                line2Middle: ', moldeamos',
+                line2Bold2: 'mercados',
+                line2End: 'y movemos',
+                line2Bold3: 'políticas',
+                line2Suffix: 'en Latinoamérica.'
+            },
+            cta: 'Descubre Nuestro Impacto'
+        },
         manifesto: {
             subtitle: '02 — El Poder de Shift',
             phrase: "Fundada en el '82, evolucionando para el 2030. Combinamos más de 40 años de experiencia con la agilidad disruptiva de una startup.",
@@ -216,6 +235,25 @@ export const translations = {
             portfolio: 'Portfolio',
             services: 'Services',
             contact: 'Contact',
+        },
+        hero: {
+            prefix: 'We Are',
+            highlight: 'Unstoppable',
+            description: {
+                line1: '',
+                line1Bold: 'Strategic',
+                line1Suffix: ' communications, data intelligence, and',
+                line1Bold2: 'creative',
+                line1End: ' technology.',
+                line2: 'We transform',
+                line2Bold1: 'brands',
+                line2Middle: ', shape',
+                line2Bold2: 'markets',
+                line2End: ', and move',
+                line2Bold3: 'policy',
+                line2Suffix: 'across Latin America.'
+            },
+            cta: 'Discover Our Impact'
         },
         manifesto: {
             subtitle: '02 — The Power of Shift',

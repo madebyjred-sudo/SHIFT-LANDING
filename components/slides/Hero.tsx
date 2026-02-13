@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import { useScene } from '../../contexts/SceneContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 // Watermark SVG - Resonancia art (inline for theme color control)
 const ResonanciaWatermark = () => (
   <svg
@@ -20,6 +21,7 @@ const ResonanciaWatermark = () => (
 );
 
 export const HeroSlide: React.FC = () => {
+  const { t } = useLanguage();
   const { goToSlide } = useScene();
   const shouldReduceMotion = useReducedMotion();
 
@@ -102,7 +104,7 @@ export const HeroSlide: React.FC = () => {
                 variants={{ hidden: { y: 100 }, visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}
                 className="font-glitz text-[12vw] md:text-[5.5vw] font-bold uppercase tracking-normal text-primary dark:text-white"
               >
-                We Are
+                {t.hero.prefix}
               </motion.h1>
             </div>
 
@@ -118,14 +120,14 @@ export const HeroSlide: React.FC = () => {
                     className="bg-gradient-to-r from-[#E6007E] via-[#FF00FF] to-[#E6007E] bg-clip-text text-transparent animate-gradient"
                     style={{ backgroundSize: '200% 100%', animation: 'gradient-shift 3s ease infinite' }}
                   >
-                    Unstoppable
+                    {t.hero.highlight}
                   </span>
                   {/* Shimmer Overlay */}
                   <span
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{ backgroundSize: '200% 100%', animation: 'shimmer 2s ease-in-out infinite' }}
                   >
-                    Unstoppable
+                    {t.hero.highlight}
                   </span>
                 </span>
               </motion.h1>
@@ -139,9 +141,9 @@ export const HeroSlide: React.FC = () => {
           >
             <p className="text-sm md:text-lg text-tertiary/80 dark:text-white/80 max-w-md mx-auto leading-relaxed normal-case tracking-normal font-medium">
               <span className="block mb-2">
-                <strong className="text-secondary">Strategic</strong> communications, data intelligence, and <strong className="text-secondary">creative</strong> technology.
+                {t.hero.description.line1} <strong className="text-secondary">{t.hero.description.line1Bold}</strong>{t.hero.description.line1Suffix} <strong className="text-secondary">{t.hero.description.line1Bold2}</strong>{t.hero.description.line1End}
               </span>
-              We transform <strong className="text-tertiary dark:text-white">brands</strong>, shape <strong className="text-tertiary dark:text-white">markets</strong>, and move <strong className="text-tertiary dark:text-white">policy</strong> across Latin America.
+              {t.hero.description.line2} <strong className="text-tertiary dark:text-white">{t.hero.description.line2Bold1}</strong>{t.hero.description.line2Middle} <strong className="text-tertiary dark:text-white">{t.hero.description.line2Bold2}</strong>{t.hero.description.line2End} <strong className="text-tertiary dark:text-white">{t.hero.description.line2Bold3}</strong> {t.hero.description.line2Suffix}
             </p>
           </motion.div>
 
@@ -154,7 +156,7 @@ export const HeroSlide: React.FC = () => {
             type="button"
             onClick={() => goToSlide(2)}
           >
-            Discover Our Impact
+            {t.hero.cta}
           </motion.button>
 
         </motion.div>
