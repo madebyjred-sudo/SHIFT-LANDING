@@ -4,183 +4,19 @@ import { Bot, BrainCircuit, Zap, TrendingUp, Smartphone, ArrowRight, Sparkles, U
 import { useScene } from '../../contexts/SceneContext';
 import { SlideId } from '../../types';
 import { MobileSectionHeader } from '../MobileSectionHeader';
+import { useLanguage } from '../../contexts/LanguageContext';
 
-// --- DATA ---
-const services = [
-  {
-    id: 'relaciones-publicas',
-    title: 'Relaciones Públicas',
-    subtitle: 'Reputación',
-    description: 'Potenciados por la tecnología de Porter Novelli, colocamos la inteligencia basada en datos al centro de la gestión reputacional de marcas y líderes. Cada reto de nuestros clientes comienza con un diagnóstico preciso que guía la estrategia.',
-    features: [
-      'Public Affairs',
-      'Stakeholder Mapping',
-      'Main sources: Gestión legislativa',
-      'Construcción de marca personal',
-      'Gestión de la reputación online',
-      'Auditoría de medios',
-      'Planning de Sostenibilidad',
-      'Proceso de transformación hacia esencia de sostenibilidad',
-      'Medición de ejes de sostenibilidad'
-    ],
-    icon: Users,
-    isSpecial: false
-  },
-  {
-    id: 'planning',
-    title: 'Planning',
-    subtitle: 'Brand Marketing y Estrategia',
-    description: 'Planificación del consumer journey, integración de datos, ejecución de reputación de marca, campañas de captación de alto valor, desarrollo de personas. Trabajamos con nuestros socios para desarrollar nuevas estrategias de crecimiento, diseñadas en torno a su propósito de marca.',
-    features: [
-      'Planning de marca',
-      'Planning de categorías',
-      'Construcción buyer personas',
-      'Construcción Consumer Journey',
-      'Construcción de Customer Experience',
-      'Construcción de marca',
-      'Estrategia de contenido',
-      'Inbound Marketing',
-      'Trends de marca, categoría y consumo',
-      'Investigación de marca a la medida'
-    ],
-    icon: Map,
-    isSpecial: false
-  },
-  {
-    id: 'creatividad-y-contenido',
-    title: 'Creatividad y Contenido',
-    subtitle: 'Rendimiento creativo',
-    description: 'Ideación y planificación, estrategia de contenidos, narración de historias. Concebimos conceptos creativos que se cuentan como historias para audiencias de hoy, satisfaciendo necesidades locales, regionales y globales. Nos tomamos la creatividad estratégica como pilar del desarrollo de gestión corporativa y reputación digital en Latinoamérica.',
-    features: [
-      'Estrategia creativa',
-      'Pilares de contenido',
-      'Estructuras de contacto para audiencias',
-      'Ideación de tácticas de engagement para cada canal de marca',
-      'Desarrollo de macro contenidos (ideas y conceptos)',
-      'Creatividad cross-marketing',
-      'Innovación creativa para marcas',
-      'Asesoría Creativa',
-      'Construcción de narrativa de marca, spokeperson y canales'
-    ],
-    icon: Lightbulb,
-    isSpecial: false
-  },
-  {
-    id: 'digital',
-    title: 'Digital',
-    subtitle: 'Marketing y Phydigital',
-    description: 'A través de la estrategia de SHIFT PN, hemos reimaginado el camino de la comunicación y el marketing digital, para ayudar a las marcas y a las empresas a tener éxito en un mundo phydigital, en el que la atención no se puede comprar ni exigir, y la confianza es la clave para desbloquear el crecimiento.',
-    features: [
-      'Detección cualitativa de insights',
-      'Activación de oportunidades para inteligencia de negocio y corporativa',
-      'Atributos de medición de experiencia de consumidor y audiencias',
-      'Recopilación de atributos de audiencia',
-      'Protocolos de engagement personalizados',
-      'Detección cualitativa de detractores y fans bajo modelo de Brand Safety',
-      'Publicación de contenidos automatizada',
-      'Reporte Cualitativo de interacción y atención'
-    ],
-    icon: Monitor,
-    isSpecial: true
-  },
-  {
-    id: 'influencia',
-    title: 'Influencia',
-    subtitle: 'Marketing de influencia',
-    description: 'Enfoque único para la estrategia de influencers y content creators ofrece resultados superiores a nuestros clientes. Nuestra estrategia, basada en los datos, centrada en las ganancias y en el diseño de las redes sociales, se adapta a cada uno de nuestros clientes de mostrar que el marketing de influencia sí genera resultados.',
-    features: [
-      'Detección de influenciadores con herramientas propietarias',
-      'Estrategia de influencia: corto, mediano y largo plazo',
-      'Negociación y contratos formales',
-      'Medición',
-      'Reportes de campaña en tiempo real',
-      'Dirección Creativa para los creadores de contenido',
-      'Producción de contenido',
-      'Diseño de experiencia con influenciadores'
-    ],
-    icon: Star,
-    isSpecial: false
-  },
-  {
-    id: 'data-e-investigacion',
-    title: 'Data e Investigación',
-    subtitle: 'Knowledge & Insights',
-    description: 'Utilizamos los datos y la inteligencia para ayudar a las empresas y organizaciones a construir relaciones de confianza con las personas: haciendo que las comunicaciones sean más auténticas, el compromiso más emocionante y las conexiones más significativas.',
-    features: [
-      'Análisis de audiencias',
-      'Patrones de audiencia',
-      'Contextos temáticos',
-      'Social Listening (Dashboards)',
-      'Insights temáticos',
-      'Estudios de consumidor y medios',
-      'Análisis de bases de datos',
-      'Predicción de Crisis',
-      'Manejo de data transaccional',
-      'Gestión de datos y clusterización'
-    ],
-    icon: Search,
-    isSpecial: false
-  },
-  {
-    id: 'performance-marketing',
-    title: 'Performance Marketing',
-    subtitle: 'Paid Media y Resultados',
-    description: 'Adoptamos un enfoque integral del marketing de resultados para los clientes, lo que significa una integración perfecta de la estrategia y la planificación, la compra de medios, la búsqueda, la automatización y la tecnología propias y los análisis, todo junto a un equipo de planificación y compra de medios que ha impulsado mejoras de tres dígitos en el rendimiento frente a las mayores agencias y plataformas programáticas.',
-    features: [
-      'Compra de medios digitales',
-      'Performance marketing',
-      'Auditoria de medios digitales',
-      'Automatización',
-      'Compra programática',
-      'Somos Google Partner',
-      'Somos Meta Partner',
-      'Somos Huawei Mobile Ads Agency Partner',
-      'Reportes en dashboard a la medida',
-      'SEO & SEM'
-    ],
-    icon: TrendingUp,
-    isSpecial: false
-  },
-  {
-    id: 'produccion',
-    title: 'Producción',
-    subtitle: 'Creación de Contenido',
-    description: 'Producción de audio, contenido de comercio electrónico, contenido en vivo, fotografía, contenido social, vídeo y gráficos en movimiento. Trabajamos en función de los objetivos empresariales, el presupuesto y la escala, reunimos a los creadores de contenidos perfectos.',
-    features: [
-      'Audiovisual',
-      'Gráfica',
-      'Experiencias Interactivas',
-      'Gaming',
-      'TikTok Factory (Modelo Propietario)',
-      'Podcast a la medida',
-      'Fotografía',
-      'Food Styling',
-      'Producción en todo LATAM',
-      'Branding',
-      'Media Kits'
-    ],
-    icon: Video,
-    isSpecial: false
-  },
-  {
-    id: 'tecnologias',
-    title: 'Tecnologías',
-    subtitle: 'Producción a la medida',
-    description: 'Desarrollamos soluciones tecnológicas a la medida que potencian la presencia digital de las marcas. Desde sitios web y e-commerce hasta aplicaciones móviles, blockchain y automatización, construimos la infraestructura digital que impulsa el crecimiento de nuestros clientes en Latinoamérica.',
-    features: [
-      'Sitios web',
-      'E-Commerce',
-      'Apps',
-      'NFTS (BRANDS)',
-      'Blockchain',
-      'Bases de datos',
-      'Data Lakes',
-      'Automatización',
-      'Gaming Development'
-    ],
-    icon: Cpu,
-    isSpecial: false
-  }
+// Icons mapping to match translations order
+const ServiceIcons = [
+  Users,      // PR
+  Map,        // Planning
+  Lightbulb,  // Creativity
+  Monitor,    // Digital
+  Star,       // Influence
+  Search,     // Data
+  TrendingUp, // Performance
+  Video,      // Production
+  Cpu         // Technologies
 ];
 
 const ServiceCard = ({ service, index }: { service: any, index: number }) => {
@@ -250,10 +86,16 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
 };
 
 export const ServicesSlide: React.FC = () => {
+  const { t } = useLanguage();
   const { goToSlide, setScrollLocked, nextSlide, prevSlide } = useScene();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const touchStartY = useRef(0);
   const canNavigate = useRef(false); // Cooldown to prevent scroll skipping
+
+  const services = t.services.items.map((item, index) => ({
+    ...item,
+    icon: ServiceIcons[index]
+  }));
 
   // Lock scroll when this slide is active to prevent SceneController from hijacking scroll
   // AND set a cooldown for navigation to prevent inertia skips
@@ -360,18 +202,17 @@ export const ServicesSlide: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-tertiary dark:text-white font-display">
-                Nuestro <span className="opacity-50">Ecosistema.</span>
+                {t.services.title}
               </h2>
               <p className="text-xl opacity-80 leading-relaxed mb-8 text-tertiary/80 dark:text-white/90 font-body">
-                Evolucionamos de agencia a consultora de crecimiento phydigital en Latinoamérica.
-                Una suite integral de servicios diseñada para un mercado donde la atención no se compra — se conquista.
+                {t.services.subtitle}
               </p>
 
               <button
                 onClick={() => goToSlide(SlideId.CONTACT, true)}
                 className="group flex items-center gap-2 px-8 py-4 rounded-full bg-tertiary text-white dark:bg-white dark:text-blue-900 font-medium text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
               >
-                Iniciar Proyecto
+                {t.services.cta}
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </motion.div>
@@ -388,9 +229,9 @@ export const ServicesSlide: React.FC = () => {
 
 
       {/* --- MOBILE LAYOUT (Horizontal Scroll + Glow) --- */}
-      <div className="relative z-10 w-full h-full flex flex-col justify-center px-0 pt-20 md:hidden">
+      <div className="relative z-10 w-full h-full flex flex-col justify-center px-0 pt-20 pb-8 md:hidden">
 
-        <MobileSectionHeader title="Servicios" />
+        <MobileSectionHeader title={t.nav.services} />
 
         {/* Horizontal Slider */}
         <div className="w-full overflow-x-auto pb-12 px-8 no-scrollbar flex gap-6 snap-x snap-mandatory">
@@ -431,7 +272,7 @@ export const ServicesSlide: React.FC = () => {
         </div>
 
         {/* Swipe Hint */}
-        <div className="absolute bottom-36 w-full text-center text-xs font-display uppercase tracking-widest opacity-50 pointer-events-none text-tertiary dark:text-white">
+        <div className="absolute bottom-24 w-full text-center text-xs font-display uppercase tracking-widest opacity-50 pointer-events-none text-tertiary dark:text-white">
           ← Desliza para explorar →
         </div>
 

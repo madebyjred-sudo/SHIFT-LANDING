@@ -102,7 +102,7 @@ export const HeroSlide: React.FC = () => {
                 variants={{ hidden: { y: 100 }, visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } } }}
                 className="font-glitz text-[12vw] md:text-[5.5vw] font-bold uppercase tracking-normal text-primary dark:text-white"
               >
-                Somos
+                We Are
               </motion.h1>
             </div>
 
@@ -118,14 +118,14 @@ export const HeroSlide: React.FC = () => {
                     className="bg-gradient-to-r from-[#E6007E] via-[#FF00FF] to-[#E6007E] bg-clip-text text-transparent animate-gradient"
                     style={{ backgroundSize: '200% 100%', animation: 'gradient-shift 3s ease infinite' }}
                   >
-                    Imparables
+                    Unstoppable
                   </span>
                   {/* Shimmer Overlay */}
                   <span
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     style={{ backgroundSize: '200% 100%', animation: 'shimmer 2s ease-in-out infinite' }}
                   >
-                    Imparables
+                    Unstoppable
                   </span>
                 </span>
               </motion.h1>
@@ -137,14 +137,12 @@ export const HeroSlide: React.FC = () => {
             variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0, transition: { delay: 0.3, duration: 1 } } }}
             className="flex flex-col gap-2 text-primary dark:text-white font-body mb-8"
           >
-            <div className="text-sm md:text-lg font-medium tracking-wide leading-relaxed">
-              Comunicación <span className="font-bold">estratégica</span>, <br />
-              inteligencia de datos y tecnología <span className="font-bold">creativa</span>.
-            </div>
-            <div className="text-sm md:text-lg font-medium tracking-wide leading-relaxed mt-2">
-              Transformamos <span className="font-bold">marcas</span>, influimos <span className="font-bold">mercados</span><br />
-              y movemos <span className="font-bold">políticas</span> en toda Latinoamérica.
-            </div>
+            <p className="text-sm md:text-lg text-tertiary/80 dark:text-white/80 max-w-md mx-auto leading-relaxed normal-case tracking-normal font-medium">
+              <span className="block mb-2">
+                <strong className="text-secondary">Strategic</strong> communications, data intelligence, and <strong className="text-secondary">creative</strong> technology.
+              </span>
+              We transform <strong className="text-tertiary dark:text-white">brands</strong>, shape <strong className="text-tertiary dark:text-white">markets</strong>, and move <strong className="text-tertiary dark:text-white">policy</strong> across Latin America.
+            </p>
           </motion.div>
 
           {/* CTA */}
@@ -156,7 +154,7 @@ export const HeroSlide: React.FC = () => {
             type="button"
             onClick={() => goToSlide(2)}
           >
-            Descubre el Impacto
+            Discover Our Impact
           </motion.button>
 
         </motion.div>

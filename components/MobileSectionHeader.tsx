@@ -14,7 +14,8 @@ export const MobileSectionHeader: React.FC<MobileSectionHeaderProps> = ({ title,
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`md:hidden fixed top-6 left-6 z-40 pointer-events-none ${className}`}
+            className={`md:hidden fixed left-6 z-40 pointer-events-none ${className}`}
+            style={{ top: 'max(1.5rem, env(safe-area-inset-top, 1.5rem))' }}
         >
             <div className="flex flex-col items-start">
                 <h2 className="text-secondary font-display font-bold text-lg tracking-widest uppercase">

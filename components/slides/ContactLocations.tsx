@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, MapPin, ArrowRight, Globe, Phone } from 'lucide-react';
 import { SlideId } from '../../types';
 import { MobileSectionHeader } from '../MobileSectionHeader';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface Office {
     id: string;
@@ -135,10 +136,24 @@ const offices: Office[] = [
         coords: "33.414° S / 70.598° W",
         gradientColor: "rgba(30, 64, 175, 0.15)",
         mapQuery: "Don Carlos 3255, Las Condes, Chile"
+    },
+    {
+        id: "usa",
+        country: "USA",
+        city: "Miami",
+        suffix: "US",
+        role: "Hub Norteamérica",
+        address: "200 S Biscayne Blvd #2000, Miami, FL 33131",
+        phone: "+1 305-371-3330", // Placeholder
+        email: "miami@shiftpn.com", // Placeholder
+        coords: "25.772° N / 80.191° W",
+        gradientColor: "rgba(255, 0, 0, 0.15)",
+        mapQuery: "200 S Biscayne Blvd, Miami, FL 33131, USA"
     }
 ];
 
 export const ContactLocations: React.FC = () => {
+    const { t } = useLanguage();
     const [selectedOffice, setSelectedOffice] = useState<string>(offices[0].id);
 
     return (
@@ -146,20 +161,20 @@ export const ContactLocations: React.FC = () => {
             {/* Mobile Header */}
             <div className="md:hidden">
                 <MobileSectionHeader
-                    title="Red LATAM"
-                    subtitle="Nuestras Oficinas"
+                    title={t.locations.networkReach}
+                    subtitle={t.locations.subtitle}
                 />
             </div>
 
             {/* Desktop Header */}
             <div className="hidden md:flex px-12 mb-6 justify-between items-end border-b border-tertiary/10 dark:border-white/10 pb-6 shrink-0 z-20 bg-white dark:bg-[#050505] transition-colors duration-500 pt-24">
                 <div>
-                    <h5 className="text-primary font-display font-bold uppercase tracking-widest text-xs mb-2">05 — Red LATAM</h5>
+                    <h5 className="text-primary font-display font-bold uppercase tracking-widest text-xs mb-2">{t.locations.title}</h5>
                     <h2 className="text-3xl md:text-4xl font-display font-bold text-tertiary dark:text-white">Shift Porter Novelli</h2>
                 </div>
                 <div className="text-right">
-                    <div className="text-xs font-mono text-tertiary/60 dark:text-white/60 mb-1">NETWORK REACH</div>
-                    <div className="text-xl font-display font-bold text-tertiary dark:text-white">9 LATAM Hubs</div>
+                    <div className="text-xs font-mono text-tertiary/60 dark:text-white/60 mb-1">{t.locations.networkReach}</div>
+                    <div className="text-xl font-display font-bold text-tertiary dark:text-white">{t.locations.hubs}</div>
                 </div>
             </div>
 

@@ -22,15 +22,15 @@ export const WorkShowcaseSlide: React.FC = () => {
   return (
     <div className="w-full h-full flex flex-col justify-center relative overflow-hidden bg-surface-container dark:bg-transparent">
       <div className="px-8 md:px-24 mb-8 md:mb-12 relative z-10">
-        <h3 className="text-secondary font-display font-bold text-xs md:text-sm tracking-widest uppercase mb-2">03 — Proyectos</h3>
-        <h2 className="font-display font-bold text-4xl md:text-6xl text-tertiary dark:text-white">Casos de Éxito</h2>
+        <h3 className="text-secondary font-display font-bold text-xs md:text-sm tracking-widest uppercase mb-2">03 — Projects</h3>
+        <h2 className="font-display font-bold text-4xl md:text-6xl text-tertiary dark:text-white">Case Studies</h2>
       </div>
 
       {/* ENDLESS MARQUEE */}
       <div
         className="relative w-full overflow-hidden group"
         role="region"
-        aria-label="Carrusel de proyectos"
+        aria-label="Project carousel"
       >
         {/* Gradient Masks */}
         <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-shift-surface-container dark:from-[#050914] to-transparent z-10 pointer-events-none"></div>
@@ -116,7 +116,7 @@ export const WorkShowcaseSlide: React.FC = () => {
         </motion.div>
 
         <div className="absolute bottom-4 right-12 text-xs font-display font-bold uppercase tracking-widest text-tertiary/70 dark:text-white/70 pointer-events-none bg-white/50 dark:bg-black/50 backdrop-blur-sm px-2 py-1 rounded">
-          Clic para ver el caso
+          Click to view case study
         </div>
       </div>
 

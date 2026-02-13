@@ -128,7 +128,7 @@ export const ProjectListSlide: React.FC = () => {
                     ))}
                 </div>
                 {/* Hint */}
-                <div className="absolute bottom-36 w-full text-center text-xs font-display uppercase tracking-widest opacity-50 pointer-events-none text-tertiary dark:text-white">
+                <div className="absolute bottom-24 w-full text-center text-xs font-display uppercase tracking-widest opacity-50 pointer-events-none text-tertiary dark:text-white">
                     ← Desliza para explorar →
                 </div>
             </div>

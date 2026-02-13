@@ -142,7 +142,7 @@ export const ContactSlide: React.FC = () => {
     const [selectedOffice, setSelectedOffice] = useState<string>(offices[0].id);
 
     return (
-        <div className="h-full w-full relative flex flex-col bg-surface-light dark:bg-black overflow-hidden pt-20 md:pt-0">
+        <div className="h-full w-full relative flex flex-col bg-surface-light dark:bg-black overflow-hidden pt-24 md:pt-0">
             {/* Mobile Header */}
             <div className="md:hidden">
                 <MobileSectionHeader
@@ -282,7 +282,7 @@ export const ContactSlide: React.FC = () => {
             </div>
 
             {/* === MOBILE LIST (tap to expand) === */}
-            <div className="md:hidden flex-1 overflow-y-auto pb-32">
+            <div className="md:hidden flex-1 overflow-y-auto pb-36">
                 {offices.map((office) => {
                     const isSelected = selectedOffice === office.id;
 

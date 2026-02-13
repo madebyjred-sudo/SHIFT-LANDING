@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 left-0 w-full z-[100] border-t border-tertiary/10 dark:border-white/10 bg-white/90 dark:bg-[#050505]/80 backdrop-blur-md transition-colors duration-500 shadow-sm md:shadow-none">
+    <footer className="hidden md:block fixed bottom-0 left-0 w-full z-[100] border-t border-tertiary/10 dark:border-white/10 bg-white/90 dark:bg-[#050505]/80 backdrop-blur-md transition-colors duration-500 shadow-sm md:shadow-none">
       <div className="w-full max-w-[1800px] mx-auto px-6 py-3 md:py-4 flex flex-row justify-between items-center">
 
         {/* Left: Copyright */}
@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               Legal
             </a>
             <a href="#" className="text-[10px] font-display font-bold uppercase tracking-widest text-tertiary/80 dark:text-white/70 hover:text-primary dark:hover:text-secondary transition-colors">
-              Privacidad
+              Privacy
             </a>
           </nav>
 

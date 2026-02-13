@@ -16,6 +16,17 @@
     @apply m-0 overflow-hidden bg-white dark:bg-[#050505];
     font-family: 'Fira Sans', sans-serif;
     cursor: none;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 
   /* Glitz - Only for main hero titles (h1, h2) */

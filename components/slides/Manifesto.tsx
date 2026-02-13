@@ -4,8 +4,9 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useScene } from '../../contexts/SceneContext';
 import { SlideId } from '../../types';
 import { MobileSectionHeader } from '../MobileSectionHeader';
+import { useLanguage } from '../../contexts/LanguageContext';
 
-const phrase = "Nacimos en el 82, evolucionamos para el 2030. Combinamos más de 40 años de experiencia con la disrupción de una startup.";
+const phrase = "Founded in '82, evolving for 2030. We combine over 40 years of experience with the disruptive agility of a startup.";
 
 // Data Nodes - Subtle background activity
 const DataNodes = () => {
@@ -37,7 +38,7 @@ const DataNodes = () => {
 }
 
 export const ManifestoSlide: React.FC = () => {
-  const words = phrase.split(" ");
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const { theme } = useTheme();
   const { goToSlide } = useScene();
@@ -102,17 +103,17 @@ export const ManifestoSlide: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col md:flex-row items-center justify-center p-8 md:p-24 relative perspective-1000 bg-surface-container dark:bg-transparent">
+    <div className="w-full h-full flex flex-col md:flex-row items-center justify-center p-6 pb-28 md:p-24 relative perspective-1000 bg-surface-container dark:bg-transparent overflow-y-auto md:overflow-hidden no-scrollbar">
       {/* Mobile Header - Uniform */}
-      <MobileSectionHeader title="Filosofía" subtitle="02 — El Poder de Shift" />
+      <MobileSectionHeader title={t.nav.philosophy} subtitle={t.manifesto.subtitle} />
 
       {/* Data Nodes Background */}
       <DataNodes />
 
-      <div className="md:w-1/2 relative z-10 pt-16 md:pt-0">
+      <div className="md:w-1/2 relative z-10 pt-20 md:pt-0">
         <h3 className="hidden md:flex text-secondary font-display font-bold mb-6 md:mb-8 text-xs md:text-sm tracking-widest uppercase items-center gap-2">
           <span className="w-6 h-[2px] bg-secondary rounded-full"></span>
-          02 — El Poder de Shift
+          {t.manifesto.subtitle}
         </h3>
         <motion.div
           variants={container}
@@ -120,16 +121,18 @@ export const ManifestoSlide: React.FC = () => {
           whileInView="visible"
           viewport={{ once: false }}
           className="flex flex-wrap"
-          aria-label={phrase}
+          aria-label={t.manifesto.phrase}
         >
-          {words.map((word, index) => (
+          {t.manifesto.phrase.split(" ").map((word, index) => (
             <motion.span
               variants={child}
               key={index}
               aria-hidden="true"
-              className="mr-2 md:mr-3 mb-1 md:mb-2 text-[1.75rem] md:text-5xl lg:text-6xl font-display font-bold uppercase text-tertiary dark:text-white leading-tight"
+              className="mr-2 md:mr-3 mb-1 md:mb-2 text-2xl md:text-5xl lg:text-6xl font-display font-bold uppercase text-tertiary dark:text-white leading-tight"
             >
-              {word.toLowerCase().includes("experiencia") || word.toLowerCase().includes("startup") ? (
+              {word.toLowerCase().includes("experience") ||
+                word.toLowerCase().includes("startup") ||
+                word.toLowerCase().includes("experiencia") ? (
                 <span className="text-secondary">{word}</span>
               ) : (
                 word
@@ -147,16 +150,16 @@ export const ManifestoSlide: React.FC = () => {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className="liquid-glass w-full text-left p-6 md:p-10 rounded-3xl relative overflow-hidden group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary transition-all duration-500"
-          aria-label="Shift Porter Novelli. Parte de Garnier Group y red global."
+          aria-label="Shift Porter Novelli. Part of Garnier Group and global network."
         >
           {/* Gloss Highlight */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-50 pointer-events-none"></div>
 
           <div className="relative z-10 transform translate-z-20">
             <div className="w-2 h-2 bg-secondary rounded-full mb-4 md:mb-6 animate-pulse"></div>
-            <h4 className="font-display font-bold text-tertiary dark:text-white mb-3 md:mb-4 text-lg md:text-xl">Globales y Latinos</h4>
+            <h4 className="font-display font-bold text-tertiary dark:text-white mb-3 md:mb-4 text-lg md:text-xl">{t.manifesto.cardTitle}</h4>
             <p className="font-body text-tertiary/80 dark:text-white/80 text-sm md:text-base leading-relaxed mb-6 md:mb-8">
-              Somos parte del Garnier Group y la red global Porter Novelli. Con presencia en toda Latinoamérica y nuestro Hub en Miami, no solo gestionamos reputación — creamos cultura.
+              {t.manifesto.cardBody}
             </p>
 
             {/* AWARDS GRAPHIC PLACEMENT */}
@@ -169,7 +172,7 @@ export const ManifestoSlide: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2 text-sm font-display font-bold text-secondary group-hover:gap-3 transition-all">
-              Explora nuestros servicios <span className="text-lg">→</span>
+              {t.manifesto.cta} <span className="text-lg">→</span>
             </div>
           </div>
 

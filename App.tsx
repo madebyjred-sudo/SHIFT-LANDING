@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { SceneProvider } from './contexts/SceneContext';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import { SEO } from './components/SEO';
 import { SceneController } from './components/SceneController';
 import { Navigation } from './components/Navigation';
 import { Cursor } from './components/Cursor';
@@ -21,18 +23,21 @@ function App() {
 
   return (
     <ThemeProvider>
-      <SceneProvider>
-        <main className="relative w-full h-screen overflow-hidden antialiased">
-          {/* Custom Cursor only on non-touch devices ideally */}
-          <div className="hidden md:block">
+      <LanguageProvider>
+        <SceneProvider>
+          <SEO />
+          <main className="relative w-full h-screen overflow-hidden antialiased">
+            {/* Custom Cursor only on non-touch devices ideally */}
+            <div className="hidden md:block">
               <Cursor />
-          </div>
-          
-          <Navigation />
-          <SceneController />
-          <Footer />
-        </main>
-      </SceneProvider>
+            </div>
+
+            <Navigation />
+            <SceneController />
+            <Footer />
+          </main>
+        </SceneProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
